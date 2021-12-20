@@ -34,21 +34,21 @@ const EquipmentItems = {
 
 const SelectItems = {
     "deku-stick": <DefaultItem id="deku-stick" />,
-    "fairy-slingshot": <MultiSlotItem id="fairy-slingshot" values={["fairy-slingshot-30", "fairy-slingshot-40", "fairy-slingshot-50"]} />,
+    "fairy-slingshot": <Item id="fairy-slingshot" />,
     "boomerang": <Item id="boomerang"/>,
     "bottle-1": <Item id="bottle-1"/>,
 
     "deku-nut": <DefaultItem id="deku-nut" />,
     "ocarina": <MultiSlotItem id="ocarina" values={["fairy-ocarina", "ocarina-of-time"]}/>,
-    "lense-of-truth": <DefaultItem id="lense-of-truth" />,
+    "lense-of-truth": <Item id="lense-of-truth" />,
     "bottle-2": <Item id="bottle-2"/>,
 
-    "bombs": <MultiSlotItem id="bombs" values={["bombs-20", "bombs-30", "bombs-40"]}/>,
+    "bombs": <Item id="bombs" />,
     "bombchu": <Item id="bombchu"/>,
     "magic-beans": <Item id="magic-beans"/>,
     "bottle-3": <Item id="bottle-3"/>,
 
-    "fairy-bow": <MultiSlotItem id="fairy-bow" values={["fairy-bow-30", "fairy-bow-40", "fairy-bow-50"]} />,
+    "fairy-bow": <Item id="fairy-bow" />,
     "hookshot": <MultiSlotItem id="hookshot" values={["hookshot", "longshot"]}/>,
     "megaton-hammer": <Item id="megaton-hammer"/>,
     "bottle-4": <Item id="bottle-4"/>,
@@ -56,12 +56,12 @@ const SelectItems = {
     "fire-arrows": <Item id="fire-arrows"/>,
     "ice-arrows": <Item id="ice-arrows"/>,
     "light-arrows": <Item id="light-arrows"/>,
-    "trading-sequence": <MultiSlotItem id="trading-sequence" values={["a", "b"]}/>,
+    "happy-mask": <MultiSlotItem id="happy-mask" values={["weird-egg"]}/>,
 
     "dins-fire": <Item id="dins-fire"/>,
     "farores-wind": <Item id="farores-wind"/>,
-    "nayrus-love": <Item id="nayru-love"/>,
-    "happy-mask": <MultiSlotItem id="happy-mask" values={["a", "b"]}/>,
+    "nayrus-love": <Item id="nayrus-love"/>,
+    "trading-sequence": <MultiSlotItem id="trading-sequence" values={["pocket-egg"]}/>,
 }
 
 

@@ -78,11 +78,11 @@ body {
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(4, 1fr);
     position: absolute;
-    width: 82%;
-    height: 81%;
+    width: 74%;
+    height: 74%;
     grid-auto-flow: column;
-    margin-top: 5%;
-    grid-gap: 1%;
+    margin-top: 3%;
+    grid-gap: 5%;
 }
 
 #quest-status {
