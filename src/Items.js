@@ -65,4 +65,4 @@ const SelectItems = {
 }
 
 
-export { EquipmentItems };
+export { EquipmentItems, SelectItems };

@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 
 
-import { EquipmentItems } from "./Items";
+import { EquipmentItems, SelectItems } from "./Items";
 
 
 import equipment from "./equipment.png";
-import selectItem from "./select_item.png";
-import questStatus from "./quest_status.png";
+import selectItem from "./select-item.png";
+import questStatus from "./quest-status.png";
 import map from "./map.png";
 
 
@@ -60,7 +60,8 @@ class SelectItem extends Component {
         return( 
             <div id="select-item" className="img-wrap">
                 <img src={selectItem} />
-                <div id="select-item-contain"/>
+                <div id="select-item-contain">
+                </div>
             </div>
         )
     }

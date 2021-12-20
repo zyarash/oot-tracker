@@ -52,7 +52,7 @@ body {
 }
 
 #equipment {
-    background: no-repeat url(http://10.0.0.60:3000/d18f73c18a943ed9f348.png) 100% / contain;
+    background: no-repeat url("equipment.png") 100% / contain;
 }
 
 #equipment-contain {
@@ -70,7 +70,7 @@ body {
 }
 
 #select-item {
-    background: no-repeat url("select_item.png") 100% / contain;
+    background: no-repeat url("select-item.png") 100% / contain;
 }
 
 #select-item-contain {
@@ -86,7 +86,7 @@ body {
 }
 
 #quest-status {
-    background: no-repeat url("quest_status.png") 100% / contain;
+    background: no-repeat url("quest-status.png") 100% / contain;
 }
 
 

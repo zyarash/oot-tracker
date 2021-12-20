@@ -7,8 +7,9 @@ class Item extends Component {
 
         this.id = this.id.bind(this);
         this.classes = this.classes.bind(this);
-        this.click = this.click.bind(this);
+        this.style = this.style.bind(this);
         this.alt = this.alt.bind(this);
+        this.click = this.click.bind(this);
 
         this.state = { obtained: false };
     }
@@ -21,8 +22,9 @@ class Item extends Component {
         return `item ${this.state.obtained ? "obtained" : ""}`;
     }
 
-    click() {
-        this.setState({ obtained: !this.state.obtained });
+    style() {
+        let img = require(`./equipment/${this.id()}.png`);
+        return { background: "no-repeat url(" + img + ") 100% / contain" };
     }
 
     alt() {
@@ -32,13 +34,18 @@ class Item extends Component {
 
     }
 
+    click() {
+        this.setState({ obtained: !this.state.obtained });
+    }
+
     render() {
         return (
             <div 
                 id={this.id()}
                 className={this.classes()}
-                onClick={() => this.click()}
+                style={this.style()}
                 title={this.alt()}
+                onClick={() => this.click()}
             />
         )
     }
