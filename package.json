@@ -1,0 +1,45 @@
+{
+  "name": "oot-tracker",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": "http://192.168.87.29:3000",
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-react": "^7.16.0",
+    "babel-loader": "^8.2.3",
+    "css-loader": "^6.5.1",
+    "html-webpack-plugin": "^5.5.0",
+    "nodemon": "^2.0.15",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.64.4",
+    "webpack-cli": "^4.9.1"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0"
+  },
+  "scripts": {
+    "build": "webpack --mode=production",
+    "build-dev": "webpack --mode=development",
+    "start": "nodemon ./main.js",
+    "watch": "webpack --watch --mode=development"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

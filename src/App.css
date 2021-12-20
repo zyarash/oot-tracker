@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-rendering: optimizeLegibility;
+  user-select: none;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
+}
+
+html {
+  min-height: 100% !important;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  background: #000;
+}
+
+#root {
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+#contain {
+    display: flex;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+#menu {
+    display: flex;
+    flex-flow: column;
+}
+
+.img-wrap {
+    position: relative;
+    width: max(23.1vw, 200px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-wrap > img {
+    opacity: 0;
+    width: 100%;
+}
+
+#equipment {
+    background: no-repeat url(http://10.0.0.60:3000/d18f73c18a943ed9f348.png) 100% / contain;
+}
+
+#equipment-contain {
+    display: grid;
+    grid-template-columns: 1fr 43% 1fr 1fr 1fr; 
+    grid-template-rows: repeat(4, 1fr);
+    position: absolute;
+    width: 87%;
+    height: 73%;
+    grid-auto-flow: column;
+    grid-row-gap: 10%;
+    grid-column-gap: 4%;
+    margin-left: -6%;
+    margin-top: 3%;
+}
+
+#select-item {
+    background: no-repeat url("select_item.png") 100% / contain;
+}
+
+#select-item-contain {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    position: absolute;
+    width: 82%;
+    height: 81%;
+    grid-auto-flow: column;
+    margin-top: 5%;
+    grid-gap: 1%;
+}
+
+#quest-status {
+    background: no-repeat url("quest_status.png") 100% / contain;
+}
+
+
+#map {
+    background: no-repeat url("map.png") bottom / contain;
+    width: max(53vw, 400px);
+}

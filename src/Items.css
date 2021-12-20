@@ -1,0 +1,178 @@
+.item {
+    width: 120%;
+    height: 120%;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.item.obtained {
+    opacity: 1;
+}
+
+.default-item {
+    cursor: not-allowed;
+}
+
+#projectiles {
+    position: relative;
+}
+
+
+/************************************************
+*
+* EQUIPMENT
+* **********************************************/
+
+ /* BULLET BAGS */
+.bullet-bag {
+     position: absolute;
+     left: -40%;
+     top: -40%;
+}
+
+ #bullet-bag-30 {
+     background: no-repeat url("equipment/bullet-bag-30.png") 100% / contain;
+ }
+
+ #bullet-bag-40 {
+     background: no-repeat url("equipment/bullet-bag-40.png") 100% / contain;
+ }
+
+ #bullet-bag-50 {
+     background: no-repeat url("equipment/bullet-bag-50.png") 100% / contain;
+ }
+ /* END BULLET BAGS */
+
+
+ /* QUIVERS */
+ .quiver {
+     position: absolute;
+     left: 40%;
+     bottom: -40%;
+ }
+
+ #quiver-30 {
+     background: no-repeat url("equipment/quiver-30.png") 100% / contain;
+ }
+
+ #quiver-40 {
+     background: no-repeat url("equipment/quiver-40.png") 100% / contain;
+ }
+
+ #quiver-50 {
+     background: no-repeat url("equipment/quiver-50.png") 100% / contain;
+ }
+ /* END QUIVERS */
+
+
+ /* BOMB BAGS */
+ #bomb-bag-20 {
+     background: no-repeat url("equipment/bomb-bag-20.png") 100% / contain;
+ }
+
+ #bomb-bag-30 {
+     background: no-repeat url("equipment/bomb-bag-30.png") 100% / contain;
+ }
+
+ #bomb-bag-40 {
+     background: no-repeat url("equipment/bomb-bag-40.png") 100% / contain;
+ }
+ /* END BOMB BAGS */
+
+
+ /* BRACERS */
+ #goron-bracelet {
+     background: no-repeat url("equipment/goron-bracelet.png") 100% / contain;
+ }
+
+ #silver-gauntlets {
+     background: no-repeat url("equipment/silver-gauntlets.png") 100% / contain;
+ }
+
+ #golden-gauntlets {
+     background: no-repeat url("equipment/golden-gauntlets.png") 100% / contain;
+ }
+ /* END BRACERS */
+
+
+ /* SCALES */
+#silver-scale {
+    background: no-repeat url("equipment/silver-scale.png") 100% / contain;
+}
+                                                                                
+#golden-scale {
+    background: no-repeat url("equipment/golden-scale.png") 100% / contain;
+}
+/* END SCALES */
+
+
+/* SWORDS*/
+#kokiri-sword {
+    background: no-repeat url("equipment/kokiri-sword.png") 100% / contain;
+}
+
+#master-sword {
+    background: no-repeat url("equipment/master-sword.png") 100% / contain;
+}
+
+#biggorons-sword {
+    background: no-repeat url("equipment/biggorons-sword.png") 100% / contain;
+}
+/* END SWORDS */
+
+
+/* SHIELDS */
+#deku-shield {
+    background: no-repeat url("equipment/deku-shield.png") 100% / contain;
+}
+
+#hylian-shield {
+    background: no-repeat url("equipment/hylian-shield.png") 100% / contain;
+}
+
+#mirror-shield {
+    background: no-repeat url("equipment/mirror-shield.png") 100% / contain;
+}
+/* END SHIELDS */
+
+
+/* TUNICS */
+#kokiri-tunic {
+    background: no-repeat url("equipment/kokiri-tunic.png") 100% / contain;
+}
+
+#goron-tunic {
+    background: no-repeat url("equipment/goron-tunic.png") 100% / contain;
+}
+
+#zora-tunic {
+    background: no-repeat url("equipment/zora-tunic.png") 100% / contain;
+}
+/* END TUNICS */
+
+
+/* BOOTS */
+#kokiri-boots {
+    background: no-repeat url("equipment/kokiri-boots.png") 100% / contain;
+}
+
+#iron-boots {
+    background: no-repeat url("equipment/iron-boots.png") 100% / contain;
+}
+
+#hover-boots {
+    background: no-repeat url("equipment/hover-boots.png") 100% / contain;
+}
+/* END BOOTS*/
+
+
+/************************************************
+*
+* SELECT ITEM
+* **********************************************/
+
+
+/************************************************
+*
+* QUEST STATUS
+* **********************************************/
