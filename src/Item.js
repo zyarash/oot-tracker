@@ -1,25 +1,24 @@
 import React, { Component } from "react";
 
 
-class Item extends Component {
-    constructor(props) { 
-        super(props);
+class Item {
+    constructor(id) {
+        this._id = id;
+        this.obtained = false;
 
         this.id = this.id.bind(this);
         this.classes = this.classes.bind(this);
         this.style = this.style.bind(this);
         this.alt = this.alt.bind(this);
         this.click = this.click.bind(this);
-
-        this.state = { obtained: false };
     }
 
     id() {
-        return this.props.id;
+        return this._id;
     }
 
     classes() {
-        return `item ${this.state.obtained ? "obtained" : ""}`;
+        return `item ${this.obtained ? "obtained" : ""}`;
     }
 
     style() {
@@ -29,72 +28,62 @@ class Item extends Component {
 
     alt() {
         let name = this.id().split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
-        let obtained = this.state.obtained ? "[Obtained]" : "[Unobtained]";
+        let obtained = this.obtained ? "[Obtained]" : "[Unobtained]";
         return `${name} ${obtained}`;
-
+                                                                                                    
     }
 
     click() {
-        this.setState({ obtained: !this.state.obtained });
-    }
-
-    render() {
-        return (
-            <div 
-                id={this.id()}
-                className={this.classes()}
-                style={this.style()}
-                title={this.alt()}
-                onClick={() => this.click()}
-            />
-        )
+        this.obtained = !this.obtained;
     }
 }
 
 
 class MultiSlotItem extends Item {
-    constructor(props) { 
-        super(props);
-                                                                                                                               
-        this.state = { obtained: false, value: 0, values: this.props.values };
+    constructor(id, values) {
+        super(id);
+        this.value = 0;
+        this.values = values;
     }
 
     id() {
-        return this.state.values[this.state.value];
+        return this.values[this.value];
     }
-
+                                                                                                                                
     classes() {
-        return `item ${this.props.id} ${this.state.obtained ? "obtained" : ""}`;
+        return `item ${this._id} ${this.obtained ? "obtained" : ""}`;
     }
-                                                                                                                               
+    
     click() {
-        if (this.state.obtained) {
-            if (this.state.value + 1 >= this.state.values.length) {
-                this.setState({ obtained: false, value: 0 });
+        if (this.obtained) {
+            if (this.value + 1 >= this.values.length) {
+                this.obtained = false;
+                this.value = 0;
             }
             else {
-                this.setState({ value: this.state.value + 1 });
+                this.value = this.value + 1;
             }
         }
         else {
-            this.setState({ obtained: !this.state.obtained });
+            this.obtained = !this.obtained;
         }
     }
 }
 
 
 class DefaultItem extends Item {
-    constructor(props) { 
-        super(props);
-        this.state = { obtained: true };
+    constructor(id) {
+        super(id);
+        this.obtained = true;
     }
 
     classes() {
         return "item default-item obtained";
     }
-
+    
     click() {
     }
 }
+
 
 export { Item, MultiSlotItem, DefaultItem };
