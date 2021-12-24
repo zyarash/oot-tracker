@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 
 
-import { Item, MultiSlotItem, DefaultItem } from "./Item";
+import { Item, MultiSlotItem, DefaultItem, MapItem, } from "./Item";
 
 
-const _EquipmentItems = [
+const _Items = [
+    // EQUIPMENT ITEMS
     new MultiSlotItem("bullet-bag", ["bullet-bag-30", "bullet-bag-40", "bullet-bag-50"]),
     new MultiSlotItem("quiver", ["quiver-30", "quiver-40", "quiver-50"]),
     new MultiSlotItem("bomb-bag", ["bomb-bag-20", "bomb-bag-30", "bomb-bag-40"]),
@@ -25,9 +26,8 @@ const _EquipmentItems = [
     new Item("mirror-shield"),
     new Item("zora-tunic"),
     new Item("hover-boots"),
-]
 
-const _SelectItems = [
+    // SELECT SCREEN ITEMS
     new DefaultItem("deku-stick"),
     new Item("fairy-slingshot"),
     new Item("boomerang"),
@@ -57,6 +57,16 @@ const _SelectItems = [
     new Item("farores-wind"),
     new Item("nayrus-love"),
     new MultiSlotItem("trading-sequence", ["pocket-egg"]),
+
+    new Item("light-medallion"),
+]
+
+
+const _MapItems = [
+    new MapItem("kokiri-sword-chest", 74, 60, []),
+    new MapItem("saria-on-the-bridge", 72.5, 55, []),
+    new MapItem("midos-house", 76, 56, []),
+    new MapItem("kokiri-song-of-storms-grotto", 75, 53, ["fire-arrows"]),
 ]
 
 
@@ -66,8 +76,8 @@ function _createItems(items) {
     return m
 }
 
-const EquipmentItems = _createItems(_EquipmentItems);
-const SelectItems = _createItems(_SelectItems);
+const Items = _createItems(_Items);
+const MapItems = _createItems(_MapItems);
 
 
-export { EquipmentItems, SelectItems };
+export { Items, MapItems };

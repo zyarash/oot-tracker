@@ -53,7 +53,7 @@ class MultiSlotItem extends Item {
     classes() {
         return `item ${this._id} ${this.obtained ? "obtained" : ""}`;
     }
-    
+
     click() {
         if (this.obtained) {
             if (this.value + 1 >= this.values.length) {
@@ -86,4 +86,38 @@ class DefaultItem extends Item {
 }
 
 
-export { Item, MultiSlotItem, DefaultItem };
+class MapItem extends Item {
+    constructor(id, x, y, reqs) {
+        super(id);
+        this.x = x;
+        this.y = y;
+        this.reqs = reqs;
+    }
+
+    obtainable(equipment) {
+        for (const req of this.reqs) {
+            console.log(req);
+            if (!equipment[req].obtained) {
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    classes(equipment) {
+        return `map-item ${this.obtainable(equipment) ? "obtainable" : ""} ${this.obtained ? "obtained" : ""}`;
+    }
+
+    style() {
+        return { left: `${this.x}%`, top: `${this.y}%` }
+    }
+
+    alt(equipment) {
+        let name = this.id().split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
+        let obtained = this.obtained ? "[Obtained]" : (this.obtainable(equipment) ? "[Obtainable // Unobtained]" : "[Unobtainable // Unobtained]");
+        return `${name} ${obtained}`;
+    }
+}
+
+
+export { Item, MultiSlotItem, DefaultItem, MapItem };

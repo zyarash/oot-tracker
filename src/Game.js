@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 
-import { EquipmentItems, SelectItems } from "./Items";
+import { Items, MapItems } from "./Items";
 
 
 import "./Items.css";
@@ -33,7 +33,7 @@ class ItemSelectBase extends Component {
     }
 
     img() {
-        return require(`./${this.props.id}.png`);
+        return require(`./backgrounds/${this.props.id}.png`);
     }
 
     style() {
@@ -43,6 +43,7 @@ class ItemSelectBase extends Component {
     click(id) {
         this.state.items[id].click();
         this.setState({ items: this.state.items });
+        this.props.update();
     }
 
     items() {
@@ -100,7 +101,7 @@ class Equipment extends ItemSelectBase {
 class SelectItem extends ItemSelectBase {
     items() {
         return( 
-            <div id="select-item-contain">
+            <div id="select-contain">
                 { this.renderItem("deku-stick") }
                 { this.renderItem("fairy-slingshot") }
                 { this.renderItem("boomerang") }
@@ -138,16 +139,58 @@ class SelectItem extends ItemSelectBase {
 
 class QuestStatus extends ItemSelectBase {
     items() {
-        return(<div/>)
+        return(
+            <div id="quest-contain">
+                <div id="quest-contain-left">
+                </div>
+                <div id="quest-contain-right">
+                    <div id="medallions">
+                        { this.renderItem("light-medallion") }
+                    </div>
+                    <div id="stones">
+                        { this.renderItem("light-medallion") }
+                        { this.renderItem("light-medallion") }
+                        { this.renderItem("light-medallion") }
+                    </div>
+                </div>
+            </div>
+        )
     }
 }
 
 
-class Map extends Component {
-    render() {
+class Map extends ItemSelectBase {
+    items() {
+        return ([
+            this.renderItem("kokiri-sword-chest"),
+            this.renderItem("saria-on-the-bridge"), 
+            this.renderItem("midos-house"),
+            this.renderItem("kokiri-song-of-storms-grotto"),
+
+
+        ])
+    }
+
+    renderItem(id) {
+        let item = this.state.items[id];
         return (
-            <div id="map" className="img-wrap">
-                <img src={require("./map.png")} />
+                <div id={item.id()}
+                    key={item.id()}
+                    className={item.classes(this.props.equipment)}
+                    style={item.style()}
+                    title={item.alt(this.props.equipment)}
+                    onClick={() => this.click(id)}
+                />
+        )
+    }
+
+    render() {
+        return(
+            <div id={this.props.id}>
+                <div id="map-contain">
+                    { this.items() }
+                    <img src={this.img()} />
+                </div>
             </div>
         )
     }
@@ -155,15 +198,28 @@ class Map extends Component {
 
 
 class Game extends Component {
+    constructor(props) {
+        super(props);
+        this.click = this.click.bind(this);
+        this.state = {
+            items: Items,
+            mapItems: MapItems,
+        };
+    }
+
+    click() {
+        this.setState({ items: this.state.items, mapItems: this.state.mapItems });
+    }
+
     render() {
         return (
             <div id="contain">
                 <div id="menu">
-                    <Equipment id="equipment" items={EquipmentItems} />
-                    <SelectItem id="select-item" items={SelectItems} />
-                    <QuestStatus id="quest-status" items={EquipmentItems} />
+                    <Equipment id="equipment" items={this.state.items} update={() => this.click()}/>
+                    <SelectItem id="select-item" items={this.state.items} update={() => this.click()}/>
+                    <QuestStatus id="quest-status" items={this.state.items} update={() => this.click()}/>
                 </div>
-                <Map />
+                <Map id="map" items={this.state.mapItems} equipment={this.state.items} update={() => this.click()}/>
             </div>
         )
     }

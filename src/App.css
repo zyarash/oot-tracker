@@ -49,10 +49,7 @@ body {
 .img-wrap > img {
     opacity: 0;
     width: 100%;
-}
-
-#equipment {
-    background: no-repeat url("equipment.png") 100% / contain;
+    align-self: flex-end;
 }
 
 #equipment-contain {
@@ -69,11 +66,7 @@ body {
     margin-top: 3%;
 }
 
-#select-item {
-    background: no-repeat url("select-item.png") 100% / contain;
-}
-
-#select-item-contain {
+#select-contain {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(4, 1fr);
@@ -85,12 +78,56 @@ body {
     grid-gap: 5%;
 }
 
-#quest-status {
-    background: no-repeat url("quest-status.png") 100% / contain;
+#quest-contain {
+    display: flex;
+    flex-flow: row;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
+#quest-contain-left {
+    width: 50%;
+    height: 100%;
+
+}
+
+#quest-contain-right {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+}
+
+#medallions {
+    width: 100%;
+    height: 70%;
+}
+
+#stones {
+    height: 30%;
+    width: 40%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+}
 
 #map {
-    background: no-repeat url("map.png") bottom / contain;
+    position: relative;
+    width: fit-content;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#map-contain {
     width: max(53vw, 400px);
+    position: relative;
+}
+
+#map-contain > img {
+    width: 100%;
 }
