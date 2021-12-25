@@ -145,12 +145,30 @@ class QuestStatus extends ItemSelectBase {
                 </div>
                 <div id="quest-contain-right">
                     <div id="medallions">
+                        <div className="spacer"/>
                         { this.renderItem("light-medallion") }
+                        <div className="spacer"/>
+
+                        { this.renderItem("shadow-medallion") }
+                        <div className="spacer"/>
+                        { this.renderItem("forest-medallion") }
+
+                        <div className="spacer"/>
+                        <div className="spacer"/>
+                        <div className="spacer"/>
+
+                        { this.renderItem("spirit-medallion") }
+                        <div className="spacer"/>
+                        { this.renderItem("fire-medallion") }
+
+                        <div className="spacer"/>
+                        { this.renderItem("water-medallion") }
+                        <div className="spacer"/>
                     </div>
                     <div id="stones">
-                        { this.renderItem("light-medallion") }
-                        { this.renderItem("light-medallion") }
-                        { this.renderItem("light-medallion") }
+                        { this.renderItem("kokiri-emerald") }
+                        { this.renderItem("gorons-ruby") }
+                        { this.renderItem("zora-sapphire") }
                     </div>
                 </div>
             </div>

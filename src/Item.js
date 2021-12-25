@@ -23,7 +23,7 @@ class Item {
 
     style() {
         let img = require(`./equipment/${this.id()}.png`);
-        return { background: "no-repeat url(" + img + ") 100% / contain" };
+        return { background: "no-repeat url(" + img + ") center / contain" };
     }
 
     alt() {

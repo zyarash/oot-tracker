@@ -59,6 +59,15 @@ const _Items = [
     new MultiSlotItem("trading-sequence", ["pocket-egg"]),
 
     new Item("light-medallion"),
+    new Item("shadow-medallion"),
+    new Item("forest-medallion"),
+    new Item("spirit-medallion"),
+    new Item("fire-medallion"),
+    new Item("water-medallion"),
+
+    new Item("kokiri-emerald"),
+    new Item("gorons-ruby"),
+    new Item("zora-sapphire"),
 ]
 
 
