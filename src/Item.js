@@ -7,6 +7,7 @@ class Item {
         this.obtained = false;
 
         this.id = this.id.bind(this);
+        this.obtained = this.obtained.bind(this);
         this.classes = this.classes.bind(this);
         this.style = this.style.bind(this);
         this.alt = this.alt.bind(this);
@@ -15,6 +16,10 @@ class Item {
 
     id() {
         return this._id;
+    }
+
+    obtained() {
+        return this.obtained;
     }
 
     classes() {
@@ -49,7 +54,12 @@ class MultiSlotItem extends Item {
     id() {
         return this.values[this.value];
     }
-                                                                                                                                
+
+    obtained(item = null) {
+        if (item === null) { return this.obtained; }
+        if (!(item in this.values)) { throw Error("Item is not valid!") }
+    }
+
     classes() {
         return `item ${this._id} ${this.obtained ? "obtained" : ""}`;
     }
@@ -87,21 +97,28 @@ class DefaultItem extends Item {
 
 
 class MapItem extends Item {
-    constructor(id, x, y, reqs) {
+    constructor(id, x, y, reqs = "") {
         super(id);
         this.x = x;
         this.y = y;
         this.reqs = reqs;
+
+        this.obtainable = this.obtainable.bind(this);
     }
 
     obtainable(equipment) {
-        for (const req of this.reqs) {
-            console.log(req);
-            if (!equipment[req].obtained) {
-                return false;
-            }
+        if (this.reqs === "") { return true; }
+
+        console.log(eval("equipment['ocarina'].obtained"));
+        let reqs = this.reqs;
+        let items = reqs.match(/\[\S*]/g);
+        for (const item of items) {
+            let _item = item.replace(/(\[|\])/g, '');
+            console.log(_item);
+            reqs = reqs.replace(item, equipment[_item].obtained);
         }
-        return true;
+        console.log(reqs);
+        return eval(reqs);
     }
     
     classes(equipment) {

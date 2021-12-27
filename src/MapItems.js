@@ -1,5 +1,0 @@
-class MapItems {
-}
-
-
-export { MapItems };

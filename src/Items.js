@@ -57,6 +57,24 @@ const _Items = [
     new Item("farores-wind"),
     new Item("nayrus-love"),
     new MultiSlotItem("trading-sequence", ["pocket-egg"]),
+    
+    new MultiSlotItem("magic-meter", ["magic-meter", "magic-meter-upgrade"]),
+    new MultiSlotItem("wallet", ["adults-wallet", "giants-wallet"]),
+    new DefaultItem("golden-skulltula"),
+
+    new Item("zeldas-lullaby"),
+    new Item("eponas-song"),
+    new Item("sarias-song"),
+    new Item("sun-song"),
+    new Item("song-of-time"),
+    new Item("song-of-storms"),
+
+    new Item("minuet-of-forest"),
+    new Item("bolero-of-fire"),
+    new Item("serenade-of-water"),
+    new Item("nocturne-of-shadow"),
+    new Item("requiem-of-spirit"),
+    new Item("prelude-of-light"),
 
     new Item("light-medallion"),
     new Item("shadow-medallion"),
@@ -72,10 +90,11 @@ const _Items = [
 
 
 const _MapItems = [
-    new MapItem("kokiri-sword-chest", 74, 60, []),
-    new MapItem("saria-on-the-bridge", 72.5, 55, []),
-    new MapItem("midos-house", 76, 56, []),
-    new MapItem("kokiri-song-of-storms-grotto", 75, 53, ["fire-arrows"]),
+    new MapItem("kokiri-sword-chest", 74, 60),
+    new MapItem("saria-on-the-bridge", 72.5, 55),
+    new MapItem("midos-house", 76, 56),
+    new MapItem("kokiri-song-of-storms-grotto", 75, 53,
+        "([ocarina] || [ocarina]) && [song-of-storms]"),
 ]
 
 

@@ -142,6 +142,28 @@ class QuestStatus extends ItemSelectBase {
         return(
             <div id="quest-contain">
                 <div id="quest-contain-left">
+                    <div id="quest-contain-left-top">
+                        { this.renderItem("magic-meter") }
+                        { this.renderItem("wallet") }
+                        { this.renderItem("golden-skulltula") }
+                    </div>
+                    <div id="quest-contain-left-mid">
+                        { this.renderItem("zeldas-lullaby") }
+                        { this.renderItem("eponas-song") }
+                        { this.renderItem("sarias-song") }
+                        { this.renderItem("sun-song") }
+                        { this.renderItem("song-of-time") }
+                        { this.renderItem("song-of-storms") }
+
+                        { this.renderItem("minuet-of-forest") }
+                        { this.renderItem("bolero-of-fire") }
+                        { this.renderItem("serenade-of-water") }
+                        { this.renderItem("nocturne-of-shadow") }
+                        { this.renderItem("requiem-of-spirit") }
+                        { this.renderItem("prelude-of-light") }
+
+                    </div>
+                    <div id="quest-contain-left-bot"/>
                 </div>
                 <div id="quest-contain-right">
                     <div id="medallions">

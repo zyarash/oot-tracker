@@ -91,7 +91,38 @@ body {
 #quest-contain-left {
     width: 50%;
     height: 100%;
+    display: flex;
+    flex-flow: column;
+}
 
+#quest-contain-left-top {
+    width: 37%;
+    height: 49%;
+    display: grid;
+    place-content: center;
+    grid-template-rows: repeat(2, 0.2fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 16%;
+    margin-left: 8%;
+    align-items: center;
+    justify-content: center;
+    grid-row-gap: 17%;
+    margin-top: 5%;
+}
+
+#quest-contain-left-mid {
+    width: 90%;
+    height: 23%;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(6, 1fr);
+    place-self: flex-end;
+    margin-right: 3%;
+    place-content: center;
+    align-items: center;
+    justify-content: center;
+    margin-top: -1%;
+    grid-row-gap: 16%;
 }
 
 #quest-contain-right {
